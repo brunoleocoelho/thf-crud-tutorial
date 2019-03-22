@@ -1,0 +1,105 @@
+<thf-page-edit 
+    t-title="Novo Cliente"
+    [t-disable-submit]="formCustomer.invalid">
+
+    <!-- para visualizar os dados em desenvolvimento diretamente na tela -->
+    <!-- {{ customer | json }} <hr> -->
+
+    <!-- Adicionado tag "form" para validações, nomeado como #formCustomer, sendo do tipo "ngForm"
+        thf-input obrigatório c/ propriedade t-required -->
+    <form #formCustomer="ngForm">
+        <!-- thf-divider server para melhorar o layout do formulário -->
+        <thf-divider class="thf-sm-12" t-label="Dados Pessoais"></thf-divider>
+
+        <!-- input de name -->
+        <thf-input class="thf-md-5" 
+            name="name" 
+            [(ngModel)]="customer.name" 
+            t-required
+            t-label="Nome Completo">
+        </thf-input>
+
+        <!-- input tipo email deve ser usado <thf-email>-->
+        <thf-email class="thf-md-5"
+            name="email"
+            [(ngModel)]="customer.email"
+            t-required
+            t-label="E-mail">
+        </thf-email>
+
+        <!-- input para status pode ser o componente <thf-switch> que equivale a valore true/false -->
+        <thf-switch class="thf-md-2"
+            name="status"
+            [(ngModel)]="customer.status"
+            t-required
+            t-label-off="Inativo"
+            t-label-on="Ativo"
+            t-label="Status">
+        </thf-switch>
+
+        <!-- input para nickname -->
+        <thf-input class="thf-md-4"
+            name="nickname"
+            [(ngModel)]="customer.nickname"
+            t-label="Apelido">
+        </thf-input>
+
+        <!-- input para Data usando <thf-datepicker> -->
+        <thf-datepicker class="thf-md-4"
+            name="burthdate"
+            [(ngModel)]="customer.birthdate"
+            t-label="Nascimento">
+        </thf-datepicker>
+
+        <!-- input para gênero utilizando componente <thf-select>, e options devem ser ThfSelectOption no typescritp -->
+        <thf-select class="thf-md-4"
+            name="genre"
+            [(ngModel)]="customer.genre"
+            t-label="Gênero"
+            [t-options]="genreOptions">
+        </thf-select>
+
+        <!-- Grupo de Filiação -->
+        <thf-divider class="thf-sm-12" t-label="Filiação"></thf-divider>
+
+        <!-- input Nome da Mãe -->
+        <thf-input class="thf-md-6"
+            name="mother"
+            [(ngModel)]="customer.mother"
+            t-label="Nome da mãe">
+        </thf-input>
+
+        <!-- input Nome do Pai -->
+        <thf-input class="thf-md-6"
+            name="father"
+            [(ngModel)]="customer.father"
+            t-label="Nome do pai">
+        </thf-input>
+
+        <!-- Grupo de Endereço -->
+        <thf-divider class="thf-sm-12" t-label="Endereço"></thf-divider>
+
+        <!-- input para Rua -->
+        <thf-input class="thf-md-6"
+            name="street"
+            [(ngModel)]="customer.street"
+            t-label="Rua">
+        </thf-input>
+
+        <!-- input para Cidade -->
+        <thf-input class="thf-md-3" 
+            name="city"
+            [(ngModel)]="customer.city"
+            t-label="Cidade">
+        </thf-input>
+
+        <!-- input para País -->
+        <thf-input class="thf-md-3"
+            name="country"
+            [(ngModel)]="customer.country"
+            t-label="País">
+        </thf-input>
+
+    </form>
+
+</thf-page-edit>
