@@ -32,7 +32,14 @@ export class CustomerFormComponent implements OnInit, OnDestroy {
   ngOnInit() { }
 
   ngOnDestroy() {
-    this.customerSub.unsubscribe();
+    if (this.customerSub) {
+      this.customerSub.unsubscribe();
+    }
+  }
+
+  // o método cancela
+  cancel() {
+    this.router.navigateByUrl('/customers');
   }
 
   // O método save já cria um botão "SALVAR" no canto superior direito

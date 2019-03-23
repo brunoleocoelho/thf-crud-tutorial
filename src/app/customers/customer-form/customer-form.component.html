@@ -38,27 +38,34 @@
         </thf-switch>
 
         <!-- input para nickname -->
-        <thf-input class="thf-md-4"
+        <thf-input class="thf-md-3"
             name="nickname"
             [(ngModel)]="customer.nickname"
             t-label="Apelido">
         </thf-input>
 
         <!-- input para Data usando <thf-datepicker> -->
-        <thf-datepicker class="thf-md-4"
+        <thf-datepicker class="thf-md-3"
             name="burthdate"
             [(ngModel)]="customer.birthdate"
             t-label="Nascimento">
         </thf-datepicker>
 
         <!-- input para gênero utilizando componente <thf-select>, e options devem ser ThfSelectOption no typescritp -->
-        <thf-select class="thf-md-4"
+        <thf-select class="thf-md-3"
             name="genre"
             [(ngModel)]="customer.genre"
             t-label="Gênero"
             [t-options]="genreOptions">
         </thf-select>
 
+        <!-- input para Nacionalidade -->    
+        <thf-input class="thf-md-3"
+            name="nationality"
+            [(ngModel)]="customer.nationality"
+            t-label="Nacionalidade">
+        </thf-input>
+        
         <!-- Grupo de Filiação -->
         <thf-divider class="thf-sm-12" t-label="Filiação"></thf-divider>
 
